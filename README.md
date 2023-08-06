@@ -34,13 +34,97 @@
 		- 计算三角网格表示的数据
 
 	- 三角形遍历
+
+		- 三角形遍历 (Triangle Traversal) 阶段将会检查每个像素是否被 一 个三角网格所覆盖。如果被覆盖的话，就会生成一个 片元 (fragment) 。而这样一个找到哪些像素被三角网格覆盖的过程就是三角形遍历，这个阶段也被称为 扫描变换 (Scan Conversion) 。
+
 	- 片元着色器
+
+		- 片元着色器 (Fragment Shader) 是另 一 个非常重要的可编程着色器阶段。在 DirectX 中，片元着色器被称为 像素着色器 (Pixel Shader) , 但片元着色器是 一 个更合适的名字，因为此时的片元并不是一个真正意义上的像素。
+
 	- 逐片元操作
+
+		- 片元通过模板测试、深度测试、混合，输出到颜色缓冲区中
+
 	- 屏幕图像
+
+- 什么是DrawCall
+
+	- 由于大部分情况下，GPU执行的速度很快，实际上在Draw Call中拖后腿的反而是CPU
+	- 当Draw Call多的时候，每次Draw Call都需要让CPU来准备数据，因此会耗费很多时间
+	- 通过批处理、避免使用大量小网格、避免使用过多材质，可以有效的减少Draw Call
 
 ### 第三章 Unity Shader基础
 
+- Unity Shader概述
+- Shader Lab
+
+	- Shader Lab是unity提供的一个更高层级的渲染抽象层
+	- ShaderLab定义了一个材质所需要的所有东西，而不仅仅是着色器代码
+	- Shader "ShaderName " {
+Properties {
+／／属性
+}
+SubShader {
+／／显卡 A 使用的子若色器
+}
+SubShader {
+／／显卡 B 使用的子着色器
+}
+Fallback "Vertex Lit "
+
+- Unity Shader的结构
+
+	- shader名字
+
+		- 通过在第一行使用这样的语句来命名自己的shader：Shader "Custom/MyShader "{  }
+
+	- properties
+
+		- Properties 语义块中包含了 一系列属性 (property)，这些属性将会出现在材质面板中。
+
+	- SubShader
+
+		- 每一个UnityShader文件可以包含多个SubShader语义块，但最少要有一个。 
+		- 当Unity需要加载这个Unity Shader时，Unity会扫描所有的SubShader语义块， 然后选择第一个能够在目标平台上运行的SubShader。 如果都不支持的话， Unity就会使用Fallback语义指定的Unity Shader。
+		- SubShader通常包含的定义如下
+SubShader { 
+／／可选的
+[Tags] 
+／／可选的
+[RenderSetup) 
+Pass { 
+// Other Passes 
+}
+
+			- RenderSetup是状态
+			- Tags是标签
+			- Pass语义块
+
+	- Fallback
+
+- Unity Shader的形式
+
+	- 表面着色器
+
+		- 表面着色器定义在SubShader语义块中
+
+	- 顶点、片元着色器
+
+		- 被定义在Pass中
+
 ### 第四章 学习Shader所需的数学基础
+
+- 笛卡尔坐标系
+
+	- 二维笛卡尔坐标系
+	- 三维笛卡尔坐标系
+
+- 点和矢量
+- 矩阵
+- 坐标空间
+- MVPC矩阵
+- 法线变换
+- Unity内置的变量
 
 ## 初级篇
 
