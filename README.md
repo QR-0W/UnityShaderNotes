@@ -87,14 +87,14 @@ Fallback "Vertex Lit "
 		- 每一个UnityShader文件可以包含多个SubShader语义块，但最少要有一个。 
 		- 当Unity需要加载这个Unity Shader时，Unity会扫描所有的SubShader语义块， 然后选择第一个能够在目标平台上运行的SubShader。 如果都不支持的话， Unity就会使用Fallback语义指定的Unity Shader。
 		- SubShader通常包含的定义如下
-SubShader { 
-／／可选的
-[Tags] 
-／／可选的
-[RenderSetup) 
-Pass { 
-// Other Passes 
-}
+	SubShader { 
+	／／可选的
+	[Tags] 
+	／／可选的
+	[RenderSetup) 
+	Pass { 
+	// Other Passes 
+	}
 
 			- RenderSetup是状态
 			- Tags是标签
