@@ -2,7 +2,7 @@
 
 ## 计算机图形学第一定律：如果它看起来是对的，那它就是对的。
 
-## 电子版资料将不会上传。有能力的话请各位支持正版。
+## 电子版书籍链接：https://drive.google.com/file/d/1K32ay-VSPnmjJyHwN4XvcE8lNWu6wFg2/view?usp=sharing
 
 ## 基础篇
 
